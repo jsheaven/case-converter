@@ -1,0 +1,66 @@
+{
+  "name": "@jsheaven/case-converter",
+  "version": "0.0.1",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "description": "A versatile JavaScript library for converting strings between camel case, Pascal case, snake case, underscore and other.",
+  "keywords": [
+    "case",
+    "converter",
+    "camelcase",
+    "pascalcase",
+    "snakecase",
+    "underscorecase",
+    "string",
+    "utility"
+  ],
+  "repository": {
+    "url": "git+https://github.com/jsheaven/case-converter.git",
+    "type": "git"
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "test": "NODE_OPTIONS='--experimental-vm-modules --enable-source-maps --no-warnings' jest --verbose --coverage",
+    "clean": "rm -rf ./dist && rm -rf ./coverage",
+    "lint": "prettier --check .",
+    "lint:fix": "prettier --write .",
+    "prebuild": "yarn clean",
+    "build": "yarn node --enable-source-maps ./build.mjs",
+    "release:package": "yarn node --enable-source-maps ./release.mjs",
+    "pre-commit": "yarn lint",
+    "pre-push": "yarn lint"
+  },
+  "author": "Michael Mannseicher<m.mansi1@gmx.net>",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs.js",
+      "import": "./dist/index.esm.js"
+    }
+  },
+  "module": "./dist/index.esm.js",
+  "main": "./dist/index.cjs.js",
+  "types": "./dist/index.esm.d.ts",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@jsheaven/easybuild": "^1.2.9",
+    "@types/jest": "^29.4.0",
+    "@types/jsdom": "^21.1.0",
+    "husky": "^8.0.3",
+    "jest": "^29.4.3",
+    "jest-environment-jsdom": "^29.4.2",
+    "jsdom": "^21.1.0",
+    "prettier": "^2.8.4",
+    "ts-jest": "^29.0.0-next.1",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "kleur": "^4.1.5",
+    "yargs-parser": "^21.1.1"
+  }
+}
