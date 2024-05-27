@@ -48,4 +48,3 @@ const convertedString = convert('SnakeCase', 'CamelCase', inputString)
 
 console.log(convertedString) // Output: helloWorld
 ```
-
