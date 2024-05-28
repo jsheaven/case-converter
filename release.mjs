@@ -47,7 +47,7 @@ const copyFiles = async (sourceFolder, destinationFolder) => {
 }
 const CURRENT_DIR = process.cwd()
 const DIST_FOLDER = path.join(CURRENT_DIR, 'dist')
-const RELEASE_FOLDER = path.join(CURRENT_DIR, 'release')
+const RELEASE_FOLDER = path.join(CURRENT_DIR, 'dist_release')
 
 //mkdir release && cp -r dist package.json LICENSE README.md release/
 const main = async () => {

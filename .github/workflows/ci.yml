@@ -74,12 +74,12 @@ jobs:
           name: artifact
           path: dist      
       - run: yarn release:package
-      - run: ls -lisha release
+      - run: ls -lisha dist_release
       - name: Publish if version in package.json change
         uses: springtype-org/github-action-npm-publish@master
         with:
           install_build_packages: true
-          project_build_dir: release
+          project_build_dir: dist_release
           create_tag: true
           auth_token: ${{ secrets.npm_token }}
         env:

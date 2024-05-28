@@ -6,3 +6,4 @@ coverage
 /.idea/
 /yarn-error.log
 release
+dist_release
